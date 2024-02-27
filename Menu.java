@@ -4,14 +4,19 @@ import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import livro.model.Livro;
+import livro.model.Romance;
+import livro.model.Terror;
+
 public class Menu {
 
 	public static Scanner leia = new Scanner(System.in);
 
 	public static void main(String[] args) {
-
+		
+	
 		int opcao, id, generoLivro;
-		String nomeLivro;
+		String nomeLivro, sinopse;
 		float valor;
 
 		while (true) {
@@ -65,10 +70,16 @@ public class Menu {
 				System.out.println("Digite o Nome do Livro: ");
 				leia.skip("\\R?");
 				nomeLivro = leia.nextLine();
+				
+				System.out.println("Digite o valor do Livro: ");
+				valor = leia.nextFloat();
 
 				System.out.println("Digite o gênero (1)romance ou (2) terror: ");
 				generoLivro = leia.nextInt();
-
+				
+				System.out.println("Digite a sinopse do Livro: ");
+				sinopse = leia.nextLine();
+				
 				keyPress();
 				break;
 			case 2:
